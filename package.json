@@ -1,16 +1,15 @@
 {
-  "private": true,
-  "version": "3.4.0",
-  "name": "lightweight-charts",
-  "author": "TradingView, Inc.",
+  "version": "3.4.3-beta",
+  "name": "@linhnle/lightweight-charts",
+  "author": "Kkts, Inc.",
   "license": "Apache-2.0",
   "description": "Financial lightweight charts built with HTML5 canvas",
   "bugs": {
-    "url": "https://github.com/tradingview/lightweight-charts/issues"
+    "url": "https://github.com/linhnle/lightweight-charts/bugs"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tradingview/lightweight-charts.git"
+    "url": "https://github.com/linhnle/lightweight-charts.git"
   },
   "module": "dist/lightweight-charts.esm.production.js",
   "main": "index.js",
@@ -83,8 +82,6 @@
     "typescript": "4.3.2"
   },
   "scripts": {
-    "postinstall": "npm run install-hooks",
-    "install-hooks": "node scripts/githooks/install.js",
     "clean": "rimraf lib/ dist/",
     "bundle-dts": "tsc --noEmit --allowJs dts-config.js && dts-bundle-generator --config dts-config.js",
     "tsc": "ttsc -p tsconfig.prod.json",

@@ -8,10 +8,12 @@ import { PriceAxisView } from './price-axis-view';
 
 export class SeriesPriceAxisView extends PriceAxisView {
 	private readonly _source: Series;
+	private readonly _hideAxisText: boolean;
 
-	public constructor(source: Series) {
+	public constructor(source: Series, hideAxisText: boolean) {
 		super();
 		this._source = source;
+		this._hideAxisText = hideAxisText;
 	}
 
 	protected _updateRendererData(
@@ -81,7 +83,7 @@ export class SeriesPriceAxisView extends PriceAxisView {
 	}
 
 	protected _axisText(lastValueData: LastValueDataResultWithData, showSeriesLastValue: boolean, showPriceAndPercentage: boolean): string {
-		if (!showSeriesLastValue) {
+		if (!showSeriesLastValue || this._hideAxisText) {
 			return '';
 		}
 

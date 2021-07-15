@@ -661,7 +661,7 @@ export class PriceScale {
 			case PriceScaleMode.IndexedTo100:
 				return this.formatter().format(logical);
 			default:
-				return this._formatPrice(logical as BarPrice);
+				return parseInt(logical.toString()).toString();
 		}
 	}
 

@@ -255,6 +255,7 @@ export class ChartApi implements IChartApi, DataUpdatesConsumer<SeriesType> {
 		patchPriceFormat(options.priceFormat);
 
 		const strictOptions = merge(clone(seriesOptionsDefaults), lineStyleDefaults, options) as LineSeriesOptions;
+		strictOptions.priceLineVisible = false;
 		const series = this._chartWidget.model().createSeries('Line', strictOptions);
 
 		const res = new SeriesApi<'Line'>(series, this, this);

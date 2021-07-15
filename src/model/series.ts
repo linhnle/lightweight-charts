@@ -115,8 +115,7 @@ export class Series<T extends SeriesType = SeriesType> extends PriceDataSource i
 		super(model);
 		this._options = options;
 		this._seriesType = seriesType;
-
-		const priceAxisView = new SeriesPriceAxisView(this);
+		const priceAxisView = new SeriesPriceAxisView(this, seriesType === 'Line');
 		this._priceAxisViews = [priceAxisView];
 
 		this._panePriceAxisView = new PanePriceAxisView(priceAxisView, this, model);
