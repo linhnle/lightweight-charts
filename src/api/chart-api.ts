@@ -241,6 +241,7 @@ export class ChartApi implements IChartApi, DataUpdatesConsumer<SeriesType> {
 		patchPriceFormat(options.priceFormat);
 
 		const strictOptions = merge(clone(seriesOptionsDefaults), histogramStyleDefaults, options) as HistogramSeriesOptions;
+		strictOptions.priceLineVisible = false;
 		const series = this._chartWidget.model().createSeries('Histogram', strictOptions);
 
 		const res = new SeriesApi<'Histogram'>(series, this, this);
